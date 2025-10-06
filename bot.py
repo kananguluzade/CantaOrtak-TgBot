@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-TOKEN = os.getenv("BOT_TOKEN")
+TOKEN = os.getenv("TOKEN") or os.getenv("BOT_TOKEN")
 DB_FILE = os.getenv("DB_FILE", "data.db")
 ADMIN_IDS = []
 
