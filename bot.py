@@ -4,11 +4,15 @@ import sqlite3
 from datetime import datetime
 import telebot
 from telebot import types
+from dotenv import load_dotenv
 
 # ====== CONFIG ======
-TOKEN = os.getenv("8377964687:AAHrypwi1IiaVe_7O1A5LB9SpX2D9JndkLQ") or "8377964687:AAHrypwi1IiaVe_7O1A5LB9SpX2D9JndkLQ"
-DB_FILE = "data.db"
-ADMIN_IDS = []  # öz tg id-ni əlavə edə bilərsən
+
+load_dotenv()
+
+TOKEN = os.getenv("BOT_TOKEN")
+DB_FILE = os.getenv("DB_FILE", "data.db")
+ADMIN_IDS = []
 
 bot = telebot.TeleBot(TOKEN, parse_mode="HTML")
 
