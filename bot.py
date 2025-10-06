@@ -14,6 +14,10 @@ TOKEN = os.getenv("BOT_TOKEN")
 DB_FILE = os.getenv("DB_FILE", "data.db")
 ADMIN_IDS = []
 
+if not TOKEN:
+    raise Exception("TOKEN bulunamadı! Railway Variables kısmını kontrol et.")
+
+
 bot = telebot.TeleBot(TOKEN, parse_mode="HTML")
 
 # ====== MESSAGE DICTIONARY (EN / TR / RU) ======
